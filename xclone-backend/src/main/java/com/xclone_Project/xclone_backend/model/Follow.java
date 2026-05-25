@@ -25,6 +25,7 @@ public class Follow {
     @Column(name = "id")
     private Long id;
 
+    //
     @ManyToOne
     @JoinColumn(name="follower_id",referencedColumnName="id")
     private User following;

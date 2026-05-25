@@ -30,6 +30,10 @@ public class User
     @NotNull
     private String username;
 
+    @Column(name = "display_name")
+    @NotNull
+    private String displayName;
+
     @Column(name = "email")
     @NotNull
     private String emailId;
