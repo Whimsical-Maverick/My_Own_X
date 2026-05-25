@@ -26,7 +26,7 @@ public class User
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     @NotNull
     private String username;
 
@@ -34,7 +34,7 @@ public class User
     @NotNull
     private String displayName;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     @NotNull
     private String emailId;
 
@@ -58,7 +58,7 @@ public class User
     @OneToMany(mappedBy = "user")
     private List<Like>likes;
 
-    @OneToMany(mappedBy = "followers")
+    @OneToMany(mappedBy = "follower")
     private List<Follow> followers;
 
     @OneToMany(mappedBy = "following")

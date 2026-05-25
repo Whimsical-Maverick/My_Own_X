@@ -32,11 +32,12 @@ public class Tweet {
     private User user;
 
     @Column(name = "content")
+    @NotNull
     private String content;
 
     @Column(name = "Created_at")
     @NotNull
-    private LocalDateTime creationTime;
+    private LocalDateTime CreationTime;
 
     @OneToMany(mappedBy = "tweet")
     private List<Like>likes;

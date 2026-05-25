@@ -17,7 +17,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "Follow")
+@Table(name = "follows")
 public class Follow {
 
     @Id
@@ -25,14 +25,13 @@ public class Follow {
     @Column(name = "id")
     private Long id;
 
-    //
     @ManyToOne
     @JoinColumn(name="follower_id",referencedColumnName="id")
-    private User following;
+    private User follower;
 
     @ManyToOne
     @JoinColumn(name="following_id",referencedColumnName="id")
-    private User followers;
+    private User following;
 
     @Column(name = "followedAt")
     @NotNull
